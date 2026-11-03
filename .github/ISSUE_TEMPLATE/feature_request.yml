@@ -1,0 +1,14 @@
+name: Feature request
+description: Suggest a new lever, metric or improvement
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What question about your channel can't Hindsight answer yet?
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like it to do?

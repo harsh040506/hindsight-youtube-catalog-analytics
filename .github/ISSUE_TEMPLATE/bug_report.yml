@@ -1,0 +1,30 @@
+name: Bug report
+description: Something isn't working as expected
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what you saw instead.
+    validations:
+      required: true
+  - type: input
+    id: where
+    attributes:
+      label: Page or URL
+      placeholder: /dashboard/demo/findings
+  - type: dropdown
+    id: instance
+    attributes:
+      label: Where are you running Hindsight?
+      options:
+        - The hosted site
+        - My own deployment
+        - Locally (npm run dev)
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error messages or logs
+      description: Remove any tokens, emails or channel ids you don't want public.
+      render: text
