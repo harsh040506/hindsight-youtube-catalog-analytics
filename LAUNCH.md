@@ -52,14 +52,14 @@ If Google shows `redirect_uri_mismatch`, the URI in the Cloud console doesn't ma
 
 ## 3. Deploy to Vercel
 
-1. Push this repository to GitHub (already there: `harsh040506/potential-octo-fishstick`).
+1. Push this repository to GitHub (`harsh040506/hindsight-youtube-catalog-analytics`).
 2. [vercel.com/new](https://vercel.com/new) → **Import** the repository. Next.js is detected; leave build settings at their defaults.
 3. **Project → Settings → Environment Variables** (Production): `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, and a **new** `SESSION_SECRET` (don't reuse the local one).
 4. **Deployments → Redeploy** so the variables take effect.
 5. Back in Google Cloud **Credentials**, add the production redirect URI: `https://<your-project>.vercel.app/api/auth/callback`. (Your site's `/setup` page shows the exact value with a copy button.)
 6. Open `https://<your-project>.vercel.app/api/health` and expect `"ok":true,"signIn":"ready"` with no `warnings`.
 
-Pick a production branch in **Settings → Git** (e.g. `main`); merge `claude/new-session-aj6iww` into it when you're happy.
+The production branch is `main` (**Settings → Git**). Every push to `main` deploys; other branches get preview URLs.
 
 **Vercel plan:** the free Hobby plan is for personal, non-commercial use. If Hindsight is part of a business or you charge for it, use Pro. The app needs no database and fits within either plan's function limits (requests are capped at 60 s).
 
